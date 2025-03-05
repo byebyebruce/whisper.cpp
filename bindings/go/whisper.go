@@ -9,7 +9,7 @@ import (
 // CGO
 
 /*
-#cgo LDFLAGS: -lwhisper -lm -lstdc++ -fopenmp
+#cgo LDFLAGS: -lwhisper -lm -lstdc++ -fopenmp -lggml -lggml-base -lggml-cpu -ldl
 #cgo darwin LDFLAGS: -framework Accelerate -framework Metal -framework Foundation -framework CoreGraphics
 #include <whisper.h>
 #include <stdlib.h>

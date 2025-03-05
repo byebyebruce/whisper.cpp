@@ -15,7 +15,7 @@ BUILD_DIR := build
 MODELS_DIR := models
 EXAMPLES_DIR := $(wildcard examples/*)
 INCLUDE_PATH := $(abspath ../../include):$(abspath ../../ggml/include)
-LIBRARY_PATH := $(abspath ../..)
+LIBRARY_PATH := $(abspath ../..):$(abspath ../../build/src):$(abspath ../../build/ggml/src)
 
 ifeq ($(GGML_CUDA),1)
 	LIBRARY_PATH := $(LIBRARY_PATH):$(CUDA_PATH)/targets/$(UNAME_M)-linux/lib/

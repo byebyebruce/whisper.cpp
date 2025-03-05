@@ -56,3 +56,13 @@ tiny.en tiny base.en base small.en small medium.en medium large-v1 large-v2 larg
 		./build/bin/whisper-cli -m models/ggml-$@.bin -f $$f ; \
 		echo "" ; \
 	done
+
+
+build/src/libwhisper.a:
+	cmake -B build -DBUILD_SHARED_LIBS=OFF -DWHISPER_STANDALONE=ON
+	cmake --build build --config Release
+
+libwhisper.a: build/src/libwhisper.a
+
+clean:
+	rm -rf ./build
